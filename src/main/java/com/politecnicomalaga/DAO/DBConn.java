@@ -9,7 +9,7 @@ public class DBConn {
 
     private final static LectorENV credenciales = new LectorENV();
     private final static String driver = "com.mysql.cj.jdbc.Driver";
-    private final static String url = "jdbc:mysql://" + credenciales.getHost() + "/" + credenciales.getDatabase() + "?useUnicode=yes&characterEncoding=UTF-8";
+    private final static String url = "jdbc:mysql://" + credenciales.getHost() + "/" + credenciales.getDatabase() + "?useUnicode=yes&characterEncoding=UTF-8&serverTimezone=UTC";
     private final static String usuario = credenciales.getUser();
     private final static String password = credenciales.getPassword();
     private Connection conn = null;

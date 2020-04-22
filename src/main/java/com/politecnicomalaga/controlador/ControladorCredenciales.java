@@ -27,7 +27,7 @@ public class ControladorCredenciales {
     public void cargarListadoCompletoCredenciales() throws SQLException {
         ResultSet rs = credencialesDAO.obtenerResultSetCredencialesBD();
         while (rs.next()){
-            Credencial credencial = new Credencial(rs.getString("nombre"), Integer.parseInt(rs.getString("algoritmo")), rs.getString("hash"), rs.getString("salt"));
+            Credencial credencial = new Credencial(Integer.parseInt(rs.getString("id")), rs.getString("nombre"), Integer.parseInt(rs.getString("algoritmo")), rs.getString("hash"), rs.getString("salt"));
             listaCredenciales.addCredencial(credencial);
         }
     }
